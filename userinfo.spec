@@ -32,7 +32,7 @@ informacjê z plików passwd, mail info, login info i wiele innych
 
 %build
 rm -f missing
-libtoolize --copy --force
+%{__libtoolize}
 aclocal
 %{__autoconf}
 autoheader
