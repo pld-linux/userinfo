@@ -33,9 +33,9 @@ informacjê z plików passwd, mail info, login info i wiele innych
 %build
 rm -f missing
 %{__libtoolize}
-aclocal
+%{__aclocal}
 %{__autoconf}
-autoheader
+%{__autoheader}
 %{__automake}
 %configure \
 	--with-aliases=/etc/mail/aliases
