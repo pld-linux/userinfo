@@ -1,13 +1,12 @@
 Summary:	Shows information about a local user
 Summary(pl):	Pokazuje informacje o lokalnych u¿ytkownikach
 Name:		userinfo
-Version:	1.5
+Version:	1.10a
 Release:	1
 License:	GPL v2
 Group:		Applications/System
-#Source0:	http://arbornet.org/~bjk/userinfo/%{name}-%{version}.tar.gz
-Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	0ed087c42b07e51b0b11162388a6efdf
+Source0:	http://arbornet.org/~bjk/userinfo/%{name}-%{version}.tar.gz
+# Source0-md5:	f6845f0c25a4ce90750a93b39e5e63cc
 Patch0:		%{name}-utmpx.patch
 Patch1:		%{name}-am.patch
 URL:		http://arbornet.org/~bjk/userinfo/
