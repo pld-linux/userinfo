@@ -1,8 +1,8 @@
 Summary:	Shows information about a local user
 Summary(pl):	Pokazuje informacje o lokalnych u¿ytkownikach
 Name:		userinfo
-Version:	1.3
-Release:	2
+Version:	1.5
+Release:	1
 License:	GPL v2
 Group:		Applications/System
 Group(de):	Applikationen/System
@@ -10,11 +10,12 @@ Group(es):	Aplicaciones/Sistema
 Group(pl):	Aplikacje/System
 Group(pt_BR):	Aplicações/Sistema
 Source0:	http://m-net.arbornet.org/~bjk/userinfo/download/%{name}-%{version}.tar.gz
-Patch0:		%{name}-makefile.patch
-Patch1:		%{name}-utmpx.patch
+Patch0:		%{name}-utmpx.patch
+Patch1:		%{name}-am.patch
 URL:		http://arbornet.org/~bjk/userinfo/
 BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	libtool
 Requires:	utempter
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -34,8 +35,12 @@ informacjê z plików passwd, mail info, login info i wiele innych
 %patch1 -p1
 
 %build
+rm -f missing
+libtoolize --copy --force
 aclocal
 autoconf
+autoheader
+automake -a -c
 %configure \
 	--with-aliases=/etc/mail/aliases
 
