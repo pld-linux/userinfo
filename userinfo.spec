@@ -1,12 +1,12 @@
 Summary:	Shows information about a local user
 Summary(pl):	Pokazuje informacje o lokalnych u¿ytkownikach
 Name:		userinfo
-Version:	1.10a
-Release:	1
+Version:	2.0
+Release:	0.1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://arbornet.org/~bjk/userinfo/%{name}-%{version}.tar.gz
-# Source0-md5:	f6845f0c25a4ce90750a93b39e5e63cc
+# Source0-md5:	53846e00d984d84babfe09063c02b6b1
 Patch0:		%{name}-utmpx.patch
 URL:		http://arbornet.org/~bjk/userinfo/
 BuildRequires:	automake
@@ -30,7 +30,7 @@ informacjê z plików passwd, mail info, login info i wiele innych
 %patch0 -p1
 
 %build
-rm -f missing
+#rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
@@ -45,12 +45,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/%{name}/*.so
 %{_mandir}/man1/*1.*
-%doc ChangeLog README BUGS
+%doc ChangeLog README
