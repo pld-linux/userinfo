@@ -5,10 +5,6 @@ Version:	1.5
 Release:	1
 License:	GPL v2
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(es):	Aplicaciones/Sistema
-Group(pl):	Aplikacje/System
-Group(pt_BR):	Aplicações/Sistema
 Source0:	http://m-net.arbornet.org/~bjk/userinfo/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-utmpx.patch
 Patch1:		%{name}-am.patch
