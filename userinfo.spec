@@ -36,7 +36,7 @@ libtoolize --copy --force
 aclocal
 autoconf
 autoheader
-automake -a -c
+automake -a -c -f
 %configure \
 	--with-aliases=/etc/mail/aliases
 
