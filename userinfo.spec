@@ -2,7 +2,7 @@ Summary:	Shows information about a local user
 Summary(pl):	Pokazuje informacje o lokalnych u¿ytkownikach
 Name:		userinfo
 Version:	1.3
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/System
 Group(de):	Applikationen/System
@@ -11,6 +11,7 @@ Group(pl):	Aplikacje/System
 Group(pt_BR):	Aplicações/Sistema
 Source0:	http://m-net.arbornet.org/~bjk/userinfo/download/%{name}-%{version}.tar.gz
 Patch0:		%{name}-makefile.patch
+Patch1:		%{name}-utmpx.patch
 URL:		http://arbornet.org/~bjk/userinfo/
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -30,6 +31,7 @@ informacjê z plików passwd, mail info, login info i wiele innych
 %prep
 %setup  -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 aclocal
