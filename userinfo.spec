@@ -8,11 +8,10 @@ Group:		Applications/System
 Source0:	http://arbornet.org/~bjk/userinfo/%{name}-%{version}.tar.gz
 # Source0-md5:	f6845f0c25a4ce90750a93b39e5e63cc
 Patch0:		%{name}-utmpx.patch
-Patch1:		%{name}-am.patch
 URL:		http://arbornet.org/~bjk/userinfo/
 BuildRequires:	automake
 BuildRequires:	autoconf
-BuildRequires:	libtool
+#BuildRequires:	libtool
 Requires:	utempter
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -29,11 +28,9 @@ informacjê z plików passwd, mail info, login info i wiele innych
 %prep
 %setup  -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 rm -f missing
-%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
@@ -56,4 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*1.*
-%doc ChangeLog README TODO BUGS
+%doc ChangeLog README BUGS
