@@ -1,49 +1,10 @@
---- ./login.c.org	Fri Jan 11 18:32:03 2002
-+++ ./login.c	Sat Jan 12 19:04:08 2002
-@@ -77,14 +77,14 @@
-     struct utmp utmp;
+--- ./login.h.org	Sun Jan 27 17:00:27 2002
++++ ./login.h	Sun Jan 27 16:57:57 2002
+@@ -23,6 +23,7 @@
  
-     if (!utmpfd) {
--        if ((utmpfd = open(_PATH_UTMP, O_RDONLY)) < 0) {
--	    perror(_PATH_UTMP);
-+        if ((utmpfd = open(_PATH_UTMPX, O_RDONLY)) < 0) {
-+	    perror(_PATH_UTMPX);
- 	    return NULL;
-         }
-     }
- 
-     if (lseek(utmpfd, 0, SEEK_SET) == -1) {
--	perror(_PATH_UTMP);
-+	perror(_PATH_UTMPX);
- 	return NULL;
-     }
- 
-@@ -187,14 +187,14 @@
-     struct utmp myutmp;
- 
-     if (!utmpfd) {
--        if ((utmpfd = open(_PATH_UTMP, O_RDONLY)) < 0) {
--	    perror(_PATH_UTMP);
-+        if ((utmpfd = open(_PATH_UTMPX, O_RDONLY)) < 0) {
-+	    perror(_PATH_UTMPX);
- 	    return NULL;
-         }
-     }
- 
-     if (lseek(utmpfd, 0, SEEK_SET) == -1) {
--	perror(_PATH_UTMP);
-+	perror(_PATH_UTMPX);
- 	return NULL;
-     }
- 
---- ./common.h.org	Fri Jan 11 20:22:51 2002
-+++ ./common.h	Sat Jan 12 19:02:41 2002
-@@ -35,6 +35,8 @@
- #define LINE_MAX 2048
+ #ifdef HAVE_UTMPX_H
+ typedef struct utmpx UTMP;
++#define _PATH_UTMPX "/var/run/utmpx"
+ #else
+ typedef struct utmp UTMP;
  #endif
- 
-+#define _PATH_UTMPX     "/var/run/utmpx"
-+
- #define VERSION "Userinfo 1.3"
- #define COPYRIGHT "Copyright 2001-2002 bjk <bjk@arbornet.org>"
- 
