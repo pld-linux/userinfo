@@ -1,7 +1,7 @@
 Summary:	Shows information about a local user
 Summary(pl):	Pokazuje informacje o lokalnych u¿ytkownikach
 Name:		userinfo
-Version:	0.9
+Version:	1.0
 Release:	1
 License:	GPL v2
 Group:		Applications/System
