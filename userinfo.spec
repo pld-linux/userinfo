@@ -6,6 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://m-net.arbornet.org/~bjk/userinfo/download/%{name}-%{version}.tar.gz
+# Source0-md5:	d2a490b6c8ea24c393eff0b5de915ae8
 Patch0:		%{name}-utmpx.patch
 Patch1:		%{name}-am.patch
 URL:		http://arbornet.org/~bjk/userinfo/
