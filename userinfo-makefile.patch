@@ -1,0 +1,16 @@
+--- ./Makefile.in.org	Sat Dec  8 13:36:40 2001
++++ ./Makefile.in	Sat Dec  8 13:40:06 2001
+@@ -22,9 +22,10 @@
+ 	$(CC) $(CFLAGS) $(DEFINES) -o $(TARGET) $(OBJS) $(LIBS)
+ 
+ install: all
+-	@INSTALL@ -s -m 0755 -o root $(TARGET) @prefix@/@bindir@
+-	@INSTALL@ -m 0644 -o root $(MANPAGE) \
+-		@prefix@/@mandir@/man$(MANSECTION)
++	mkdir -p $(DESTDIR)@bindir@ $(DESTDIR)@mandir@/man$(MANSECTION)
++	@INSTALL@ -s -m 0755 $(TARGET) $(DESTDIR)@bindir@
++	@INSTALL@ -m 0644 $(MANPAGE) \
++		$(DESTDIR)@mandir@/man$(MANSECTION)
+ 
+ tags:
+ 	rm -f tags 
