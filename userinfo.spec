@@ -11,6 +11,7 @@ Patch0:		%{name}-utmpx.patch
 URL:		http://arbornet.org/~bjk/userinfo/
 BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	libtool
 Requires:	utempter
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
