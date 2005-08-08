@@ -1,5 +1,5 @@
---- userinfo-1.10a/src/login.h.org	Sun Jan 27 17:00:27 2002
-+++ userinfo-1.10a/src/login.h	Sun Jan 27 16:57:57 2002
+--- userinfo-1.10a/src/modules/login.h.org	Sun Jan 27 17:00:27 2002
++++ userinfo-1.10a/src/modules/login.h	Sun Jan 27 16:57:57 2002
 @@ -23,6 +23,7 @@
  */
  #ifdef HAVE_UTMPX_H
