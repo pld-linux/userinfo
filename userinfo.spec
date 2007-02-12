@@ -1,5 +1,5 @@
 Summary:	Shows information about a local user
-Summary(pl.UTF-8):   Pokazuje informacje o lokalnych użytkownikach
+Summary(pl.UTF-8):	Pokazuje informacje o lokalnych użytkownikach
 Name:		userinfo
 Version:	2.1
 Release:	0.1
