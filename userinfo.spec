@@ -1,5 +1,5 @@
 Summary:	Shows information about a local user
-Summary(pl):	Pokazuje informacje o lokalnych uøytkownikach
+Summary(pl.UTF-8):   Pokazuje informacje o lokalnych u≈ºytkownikach
 Name:		userinfo
 Version:	2.1
 Release:	0.1
@@ -20,10 +20,10 @@ userinfo is a small console utility which shows as much information
 about a local user as possible. Output options include: password file
 info, mail info, login info and more.
 
-%description -l pl
-userinfo jest ma≥ym konsolowym narzÍdziem, ktÛre pokazuje tyle
-informacji o lokalnym uøytkowniku, ile to tylko moøliwe. Wy∂wietla:
-informacjÍ z plikÛw passwd, mail info, login info i wiele innych
+%description -l pl.UTF-8
+userinfo jest ma≈Çym konsolowym narzƒôdziem, kt√≥re pokazuje tyle
+informacji o lokalnym u≈ºytkowniku, ile to tylko mo≈ºliwe. Wy≈õwietla:
+informacjƒô z plik√≥w passwd, mail info, login info i wiele innych
 
 %prep
 %setup  -q
