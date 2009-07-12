@@ -1,14 +1,14 @@
 Summary:	Shows information about a local user
 Summary(pl.UTF-8):	Pokazuje informacje o lokalnych użytkownikach
 Name:		userinfo
-Version:	2.1
-Release:	0.1
+Version:	2.2
+Release:	1
 License:	GPL v2
 Group:		Applications/System
-Source0:	http://arbornet.org/~bjk/userinfo/%{name}-%{version}.tar.gz
-# Source0-md5:	e3ac891b4e902954747eadc9d74e3408
+Source0:	http://dl.sourceforge.net/bjk/%{name}-%{version}.tar.gz
+# Source0-md5:	b0e68200657b8b6427f886a0fb986348
 Patch0:		%{name}-utmpx.patch
-URL:		http://arbornet.org/~bjk/userinfo/
+URL:		http://bjk.sourceforge.net/userinfo/
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
@@ -26,10 +26,11 @@ informacji o lokalnym użytkowniku, ile to tylko możliwe. Wyświetla:
 informację z plików passwd, mail info, login info i wiele innych
 
 %prep
-%setup  -q
+%setup -q
 %patch0 -p1
 
 %build
+%{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
@@ -50,9 +51,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README
+%doc ChangeLog KnownBugs NEWS README contrib/lastusers.sh doc/README.modules
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/%{name}
-# what about  /usr/lib/userinfo/{login.la,mail.la,passwd.la} ?
+# what about /usr/lib/userinfo/{login.la,mail.la,passwd.la} ?
 %attr(755,root,root) %{_libdir}/%{name}/*.so
 %{_mandir}/man1/*1.*
