@@ -1,16 +1,16 @@
 Summary:	Shows information about a local user
 Summary(pl.UTF-8):	Pokazuje informacje o lokalnych użytkownikach
 Name:		userinfo
-Version:	2.2
+Version:	2.3
 Release:	1
 License:	GPL v2
 Group:		Applications/System
-Source0:	http://dl.sourceforge.net/bjk/%{name}-%{version}.tar.gz
-# Source0-md5:	b0e68200657b8b6427f886a0fb986348
+Source0:	http://downloads.sourceforge.net/userinfo/%{name}-%{version}.tar.bz2
+# Source0-md5:	d0d080c64608b4f931ab21b11d50831b
 Patch0:		%{name}-utmpx.patch
-URL:		http://bjk.sourceforge.net/userinfo/
+URL:		http://userinfo.sourceforge.net/
+BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
-BuildRequires:	autoconf
 BuildRequires:	libtool
 Requires:	utempter
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
